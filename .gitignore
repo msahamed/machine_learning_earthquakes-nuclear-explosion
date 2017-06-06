@@ -1,0 +1,8 @@
+logs/
+graph/
+test/
+train/
+.ipynb_checkpoints/
+.DS_Store
+*.csv
+data/
