@@ -6,3 +6,6 @@ train/
 .DS_Store
 *.csv
 data/
+seismograms/
+.vscode/
+__pycache__/
