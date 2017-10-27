@@ -10,3 +10,7 @@ data/
 seismograms/
 .vscode/
 __pycache__/
+seismogram_v2/
+seismograms_old/
+Codes/.~lock.seismogram_data_62.csv#
+
