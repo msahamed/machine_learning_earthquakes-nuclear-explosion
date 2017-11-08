@@ -21,11 +21,11 @@ The University of Memphis
 Memphis, TN 38152, USA
 
 ### Notebook files :
-benchmark-final_features.ipynb: To create bench marks with different algorithoms
-classify_earthquake_nn.ipynb : Create neural network model
-classify_earthquakes.ipynb : This is the main file where support vector machine was used.
-extract_features_seismograms.ipynb : Using this module I extract features from seismograms
-seismogram_analysis.ipynb : This module is for analysising seismograms
+<li> benchmark-final_features.ipynb: To create bench marks with different algorithoms
+<li> classify_earthquake_nn.ipynb : Create neural network model
+<li> classify_earthquakes.ipynb : This is the main file where support vector machine was used.
+<li> extract_features_seismograms.ipynb : Using this module I extract features from seismograms
+<li> seismogram_analysis.ipynb : This module is for analysising seismograms
 
 ### Codes and libraries
 
