@@ -1,0 +1,145 @@
+\documentclass[12pt]{article}
+    
+    \usepackage{kantlipsum}   %% only for demo
+    \usepackage[utf8x]{inputenc}
+    \usepackage[T1]{fontenc}
+    \usepackage{lmodern}
+    \usepackage{marvosym}
+    \usepackage{graphicx}
+    \usepackage{hyperref}
+    \usepackage{float}
+    \usepackage{natbib}
+    \usepackage{amsmath}
+    \usepackage{cite}
+    \hypersetup{
+        colorlinks=true,
+        linkcolor=blue,
+        filecolor=magenta,      
+        urlcolor=blue,
+    }
+
+    \pagestyle{empty}
+
+    \usepackage{hyperref}
+    \hypersetup{
+        colorlinks=true,
+        linkcolor=blue,
+        citecolor=blue,      
+        urlcolor=blue
+    }
+    
+    \usepackage[scale=0.88]{geometry}
+    \setlength{\parindent}{0pt}
+    \addtolength{\parskip}{6pt}
+    \begin{document}
+
+
+    \begin{minipage}[c]{1.0 \textwidth}
+        \begin{center}
+            \Large{\textbf{Seperate Earthqukaes from Nuclear explosions}}\\[0.5em]
+            Sabber Ahamed\\
+            \today
+        \end{center}
+    \end{minipage}\\[1.50em]
+    
+    \section{Domain Background}
+        
+
+    The Comprehensive Nuclear-Test-Ban Treaty (CTBT) is a multinational treaty aim to ban all nuclear activities including explosions, for both civilian and military purposes.  More than 180 countries have agreed and signed the agreement.  But, forty-four countries that have the existing nuclear capabilities must sign and approve the deal for it to have the force of law. Several recognized monitoring systems are used to control the potential violations of the treaty. Seismic wave observation is one of them and is considered the most reliable method for verifying an underground explosion. Seismic stations typically detect as many as 800,000 earthquakes of worldwide. Compare to this number, explosions especially the number of nuclear explosions are very-low. Seismologists use several observations such as polarization, p-wave, S-wave and surface wave, depth of the events, etc. to distinguish explosions signal from earthquakes. All the process are complex and requires the integration of physical and statistical techniques and human interpretations. Not always all the reviews are right. For example, recent quake from North Korea with magnitude 3.0 was first identified as nuclear explosions both by China and South Korea, but the detailed study of the seismic waves later confirmed that the quake was indeed a natural earthquake~\citep{telegraphNatural2017}. Machine learning approach has been adopted to minimizing error in discriminating mine seismic events from mine blasts~\citep{dong2016discrimination}. In this project, my primary goal is to develop an improved machine learning model that can separate natural earthquake from nuclear explosions using raw seismogram.
+
+    \section{Statement of work}
+
+    I plan to use supervised learning techniques toward the final solution. The primary goal is to develop a machine learning model that can distinguish natural earthquakes from nuclear explosions. Since there are only two types of data (earthquakes and nuclear explosions), the model would be binary classification problem. The performance will be evaluated by accuracy, recall, F-1 and ROC-AUC scores based on the predicted and actual values of the test dataset.
+
+    \section{Datasets and Inputs}
+    I will use the facilities of Incorporated Research Institutions for Seismology (IRIS) Data Services, and specifically, the IRIS Data Management Center, to access waveforms, related metadata, and derived products used in this study. IRIS Data Services are funded through the Seismological Facilities for the Advancement of Geoscience and EarthScope (SAGE) Proposal of the National Science Foundation under Cooperative Agreement EAR-1261681. The events I will be using for this study are listed in table-\ref{tab:events_list}. 
+
+    \begin{table}[ht]
+        \caption{Seismic events used for this study}
+        \label{tab:events_list}
+        \centering
+        \begin{tabular}{ l c c c c}
+        \hline
+         Event Origin & Date & Magnitude & No. of seismograms & Event type \\
+         \hline 
+          
+         % Earthquakes
+         Banda Sea & Oct. 24, 2017 & 6.7 & 3382 & Natural earthquake\\
+         Sumatra, Indonesia & Dec. 26, 2004 & 9.0 & 1193 & Natural earthquake \\
+         Myanmar India border region & Mar. 12, 2010 & 5.5 & 3021 & Natural earthquake \\
+         Southeast of Ryukyu islands & Aug. 15, 1017 & 4.9 & 2644 & Natural earthquake \\
+         Near coast of chiapas mexico & Sep. 08, 2017 & 8.1  & 2722 & Natural earthquake \\
+         \hline
+         Total & & & 12962 &\\
+         \hline
+         \hline
+         % Nuclear explosions
+         India & May. 11, 1998 & 5.2 & 459 & Nuclear explosions \\
+         Pakistan & May. 28, 1998 & 4.8 & 470 & Nuclear explosions \\
+         Pakistan & May. 30, 1998 & 4.6 & 398 & Nuclear explosions \\
+         North Korea & Feb. 12, 2013 & 5.1  & 3763 & Nuclear explosions \\
+         North Korea & Jan. 06, 2016 & 5.1  & 2640 & Nuclear explosions \\
+         North Korea & Sep. 03, 2017 & 6.3  & 2804 & Nuclear explosions \\
+         \hline
+         Total & & & 10534 &\\
+         \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{table}[ht]
+        \caption{Features for the model}
+        \label{tab:feature_list}
+        % \centering
+        \begin{tabular}{l p{0.55\textwidth} c }
+            \hline
+            Feature Name & Description & No. of features \\
+            \hline
+            MFCCs & Mel-frequency cepstral coefficients. & 40\\
+            Chorma-stft & Chromagram representing the 12 distinct chromas. & 12 \\
+            Amplitude & Maximum and mean amplitude of a waveform & 2\\
+            Spectral centroid & Measures the 'center of mass' of a waveform. & 1\\
+            Statistical parameters & Moment, variation, skew, variance, auto-corelation, kurtosis. & 6 \\
+            \hline
+            Total Number of features & & 61 \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    Each seismogram is 21 minutes long and starts 1 minute before \textit{P}-wave arrival and ends 20 minutes after \textit{P}-wave arrival. Characteristics signal features that will be extracted using librosa~\citep{mcfee2015librosa}- a python package for music and audio analysis are listed the table-\ref{tab:feature_list}. To improve the performance of the model, the number of features may vary in the final solution. 25$\%$ data will be used for testing the model. Since the amount of data in both classes are not equal, I will also observe if the model performance improves with class weight defined as 'balanced' in scikit-sklearn algorithms.
+
+    \section{Solution Statement}
+    The next step would make a support vector machine model that outperforms its current scores. I would first find the best parameters using GridSearchCV of scikit-sklearn~\citep{scikit-learn}. I believe the best parameters will improve the model performance. Whatever the case I would also look the learning curve of the model to check if the model requires more training data to outperform.I will add/remove features to see if the model scores improve.
+
+    
+    \section{Benchmark Model}
+    Table-\ref{tab:model_benchmark} listed five supervised algorithms used to create the benchmark. In these benchmarks, I used sklearn~\citep{scikit-learn} default parameters. It is pretty obvious that the support vector machine (SVM) performs better than all other algorithms. Therefore, I will use SVM as the final model while its scores will be used as the benchmark for further improvement.
+    
+    \begin{table}[ht]
+        \caption{Model performance in five algorithoms}
+        \label{tab:model_benchmark}
+        \centering
+        \begin{tabular}{l c c c c}
+            \hline
+            Algorithom & Accuracy & ROC-AUC & Avg. F1-score & Avg. recall \\
+            \hline
+            Random Forest & 0.64 & 0.64 & 0.64 & 0.65 \\
+            Xgboost & 0.61 & 0.60 & 0.61 & 0.61 \\
+            LightGBM & 0.48 & 0.41 & 0.42 & 0.48 \\
+            Gaussian Naive Bayes & 0.50 & 0.63 & 0.41 & 0.50 \\
+            Support Vector machine & 0.77 & 0.76 & 0.78 & 0.78 \\
+            \hline
+        \end{tabular}
+    \end{table}
+    
+    \section{Evaluation Metrics}
+
+In this project, I will use the following evaluation metrics:  (1) Accuracy (2) Recall (3) F-1 Score (4) Receiver Operating Characteristic Curve (ROC AUC) and (4) confusion matrix. Other than recall and F1-score, the confusion matrix is interesting since it provides information on the performance of the model on a set of test data for which the actual values are known. The results will be evaluated based on the predicted and the actual values of the testing dataset.
+    
+    \section{Project Design}
+
+    First, I will find the best SVM parameters which will improve the model performance. Then I would try to do some feature engineering to find features that are responsible for the better accuracy. I will also look into learning curve to check if the model needs more training data to outperform the current scores. I would iterate the above steps until finding the best model.
+    
+    \bibliographystyle{plain}
+    \bibliography{proposal_referneces}
+    
+    \end{document}

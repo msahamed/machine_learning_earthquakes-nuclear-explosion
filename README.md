@@ -1,7 +1,7 @@
 ## Separate Earthquake Signals from Nuclear Explosions
 
 ### Basic Information:
-In this project, I aim to classify earthquake signals from nuclear explosions. Both earthquakes and nuclear explosions generate seismic waves that can be detected thousands of kilometers away. However, it is not always an easy
+In this project, I develop machine learning models to seperate earthquake signals from nuclear explosions. Both earthquakes and nuclear explosions generate seismic waves that can be detected thousands of kilometers away. However, it is not always an easy
 task to separate them from each other. Although seismologists have developed methods, it is sometimes very challenging. 
 For example, a recent 3.4 magnitude quake from North Korea was interpreted as 'suspected explosion' but later identified as natural. 
 More details can be found here :
@@ -19,6 +19,13 @@ Center For Earthquake Research and Information (CERI)
 The University of Memphis
 3890 Central Ave
 Memphis, TN 38152, USA
+
+### Notebook files :
+benchmark-final_features.ipynb: To create bench marks with different algorithoms
+classify_earthquake_nn.ipynb : Create neural network model
+classify_earthquakes.ipynb : This is the main file where support vector machine was used.
+extract_features_seismograms.ipynb : Using this module I extract features from seismograms
+seismogram_analysis.ipynb : This module is for analysising seismograms
 
 ### Codes and libraries
 

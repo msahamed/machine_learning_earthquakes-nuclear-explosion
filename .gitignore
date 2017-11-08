@@ -6,11 +6,47 @@ train/
 .ipynb_checkpoints/
 .DS_Store
 *.csv
+!Codes/seismogram_data_73_new.csv
+*.pkl
+*.eps
+*.jpeg
 data/
 seismograms/
 .vscode/
 __pycache__/
 seismogram_v2/
 seismograms_old/
+seismogram_v2 copy/
+seismogram_v2_reduced/
 Codes/.~lock.seismogram_data_62.csv#
 
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+Proposal/Classify_earthquakes_proposal.fdb_latexmk
+Proposal/Classify_earthquakes_proposal.pdf
+Proposal/Classify_earthquakes_proposal.synctex.gz
+Proposal/Proposal.pdf
+Proposal/Proposal.zip
+Report/Classify_earthquakes_report.fdb_latexmk
+Report/Classify_earthquakes_report.pdf
+Report/Classify_earthquakes_report.synctex.gz
+Report/report-example-1.pdf
