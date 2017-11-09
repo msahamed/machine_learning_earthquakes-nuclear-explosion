@@ -7,6 +7,7 @@ train/
 .DS_Store
 *.csv
 !Codes/seismogram_data_73_new.csv
+!Codes/seismogram_data_73_new_robust.csv
 *.pkl
 *.eps
 *.jpeg
@@ -14,6 +15,7 @@ data/
 seismograms/
 .vscode/
 __pycache__/
+robustness/
 seismogram_v2/
 seismograms_old/
 seismogram_v2 copy/
@@ -40,13 +42,3 @@ Codes/.~lock.seismogram_data_62.csv#
 *-blx.aux
 *-blx.bib
 *.run.xml
-
-Proposal/Classify_earthquakes_proposal.fdb_latexmk
-Proposal/Classify_earthquakes_proposal.pdf
-Proposal/Classify_earthquakes_proposal.synctex.gz
-Proposal/Proposal.pdf
-Proposal/Proposal.zip
-Report/Classify_earthquakes_report.fdb_latexmk
-Report/Classify_earthquakes_report.pdf
-Report/Classify_earthquakes_report.synctex.gz
-Report/report-example-1.pdf

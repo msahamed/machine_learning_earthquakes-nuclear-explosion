@@ -38,7 +38,7 @@
         The Comprehensive Nuclear-Test-Ban Treaty (CTBT) is a multinational treaty aim to ban all nuclear activities including explosions, for both civilian and military purposes.  More than 180 countries have agreed and signed the agreement.  But, forty-four countries that have the existing nuclear capabilities must sign and approve the deal for it to have the force of law. Several recognized monitoring systems are used to control the potential violations of the treaty. Seismic wave observation is one of them and is considered the most reliable method for verifying an underground explosion. Seismic stations typically detect as many as 800,000 earthquakes worldwide. Compare to this number, explosions especially the number of nuclear explosions are very-low. Seismologists use several observations such as polarization, p-wave, S-wave and surface wave, depth of the events, etc. to distinguish explosions signal from earthquakes. All the process are complicated and requires the integration of physical and statistical techniques and human interpretations. Not always all the reviews are right. For example, recent quake from North Korea with magnitude 3.0 was first identified as nuclear explosions both by China and South Korea, but the detailed study of the seismic waves later confirmed that the quake was indeed a natural earthquake~\citep{telegraphNatural2017}. Machine learning approach has been adopted to minimizing error in discriminating mine seismic events from mine blasts~\citep{dong2016discrimination}. In this project, my primary goal is to develop an improved machine learning model that can separate natural earthquake from nuclear explosions using raw seismogram.
         
         \section{Problem Statement}
-        I plan to use supervised learning techniques toward the final solution. The primary goal is to develop a machine learning model that can distinguish natural earthquakes from nuclear explosions. Since there are only two types of data (earthquakes and nuclear explosions), the model would be binary classification problem. The performance will be evaluated by accuracy, recall, F-1 and ROC-AUC scores based on the predicted and actual values of the test dataset.
+        I plan to use supervised learning techniques toward the final solution. The primary goal is to develop a machine learning model that can distinguish natural earthquakes from nuclear explosions. Since there are only two types of data (earthquakes and nuclear explosions), the model would be binary classification problem. I plan to use support vector machine (SVM) because the preliminary studies show that SVM outperforms the other supervised algorithms such as random forest, Xgboost, LightGBM, etc. More details of SVM is described in algorithoms and techniques sections. The justification for using SVM is discussed in benchmark section. Performance of the model will be evaluated by accuracy, recall, F-1 and ROC-AUC scores based on the predicted and actual values of the test dataset.
     
     
         \section{Metrics}
@@ -269,7 +269,28 @@
             \end{tabular}
         \end{table}
     
-        Table~\ref{tab:classification_report} shows the classification report using three evaluation metrics. The overall testing accuracy of the model is $87\%$.  Accuracy measures the proportion of correctly classified classes out of total test datasets. In addition to accuracy, we also consider precision, recall, and f-1 scores. Precision measures how many datasets are correctly classified as true positive among the true and false positive combined.  Whereas, the recall measures the proportion of the correctly identified true positive instances among the total positive datasets. The F-1 score is the harmonic mean of recall and precision.
+        Table~\ref{tab:classification_report} shows the classification report using three evaluation metrics. The overall testing accuracy of the model is about $88\%$.  Accuracy measures the proportion of correctly classified classes out of total test datasets. In addition to accuracy, we also consider precision, recall, and f-1 scores. Precision measures how many datasets are correctly classified as true positive among the true and false positive combined.  Whereas, the recall measures the proportion of the correctly identified true positive instances among the total positive datasets. The F-1 score is the harmonic mean of recall and precision.
+
+        \subsection{Robustness of the Model}
+        I have tested the robustness of the model with an earthquake occurred on May 25, 2009, in Chile-Bolivia border region, the magnitude is 4.1, and a nuclear explosion happened in North Korea on same day May 25 of 2009 with almost same magnitude 4.7. All the new data are processed separately. The purpose of choosing the same day and nearly the same magnitude is to see if the model can perform better in this unknown data sets.
+        
+                \begin{table}[!htb]
+                    \caption{Classification results based on 23460 unknown data} \vspace{0.5em}
+                    \label{tab:robust_classification_report}
+                    \centering
+                    \begin{tabular}{l c c c c}
+                        \hline
+                        Class & Precision & Recall & F-1 score & support\\
+                        \hline
+                        Natural Earthquke & 0.97 & 0.97 & 0.97 & 12962 \\
+                        Nuclear explosion & 0.96 & 0.96 & 0.96 & 10498\\
+                        Average/Total & 0.97 & 0.97 & 0.97 &23460\\[1ex]
+                        \hline
+                    \end{tabular}
+                \end{table}
+        
+        Interestingly the model outperforms the testing performance. The new accuracy and ROC-AUC score are 96.85$\%$ and9 96.81$\%$ The table~\ref{tab:robust_classification_report} show the detail evaluation report on the classification. I am amazed to see the robustness of the model which motivates me to publish this result and model as a paper as soon as possible. I believe the model will help both the scientific and political community to track recent North Korea's nuclear activity.
+
         
         \subsection{Justification}
         The final ROC-AUC score of the model is 87.76$\%$ which is 10.22$\%$ more than that of the benchmark. To judge the model performance on positive-class (nuclear explosions), we need to look at the misclassification. In the benchmark, the model misclassified 30.11$\%$ atomic explosions while the final results misclassified 16.67$\%$. The model also successfully identifies the recent nuclear explosion in North Korea~(Fig.~\ref{fig:predicted_seismogram}), which is a great performance. In summary, the current model is helpful to discriminate the signals recorded only in the USA, however, to solve the bigger problem we need more data hence powerful hardware with multiple CPUs or GPUs.

@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex Classify_earthquakes_report"] 1510159105 "Classify_earthquakes_report.aux" "Classify_earthquakes_report.bbl" "Classify_earthquakes_report" 1510159863
+["bibtex Classify_earthquakes_report"] 1510257724 "Classify_earthquakes_report.aux" "Classify_earthquakes_report.bbl" "Classify_earthquakes_report" 1510258374
   "/usr/local/texlive/2017/texmf-dist/bibtex/bst/base/plain.bst" 1480098433 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "Classify_earthquakes_report.aux" 1510159863 8717 687b09f75c7a834914dc39321d6959f5 ""
+  "Classify_earthquakes_report.aux" 1510257801 9077 83b32af3f4ab7b0c0ec236b3bbd085cf ""
   "report_referneces.bib" 1509983983 2007 802f264b312862862021607bfe9d9ebb ""
   (generated)
   "Classify_earthquakes_report.blg"
   "Classify_earthquakes_report.bbl"
-["pdflatex"] 1510159862 "/Users/sabber/Documents/Research/Machine_learning/classify_earthquakes/Paper/report/Classify_earthquakes_report.tex" "Classify_earthquakes_report.pdf" "Classify_earthquakes_report" 1510159863
-  "/Users/sabber/Documents/Research/Machine_learning/classify_earthquakes/Paper/report/Classify_earthquakes_report.tex" 1510159862 24906 aabfb2280eeb96fe94b6750e92b31f81 ""
+["pdflatex"] 1510257800 "/Users/sabber/Documents/Research/Machine_learning/classify_earthquakes/Report/Classify_earthquakes_report.tex" "Classify_earthquakes_report.pdf" "Classify_earthquakes_report" 1510258374
+  "/Users/sabber/Documents/Research/Machine_learning/classify_earthquakes/Report/Classify_earthquakes_report.tex" 1510257799 26954 69c293dd9331a10394d9d5aafa818382 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1480098668 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1480098668 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1480098668 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -98,17 +98,17 @@
   "/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495593472 2350277 a699055bee05bf8a40b0504752487295 ""
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1495593487 4129592 0e6cfee100d68e6d96b92c0258f2ff73 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "Classify_earthquakes_report.aux" 1510159863 8717 687b09f75c7a834914dc39321d6959f5 ""
-  "Classify_earthquakes_report.bbl" 1510159105 1541 e6bd64ea33c57a6b1b323378ad83a797 "bibtex Classify_earthquakes_report"
-  "Classify_earthquakes_report.out" 1510159863 1438 78934c647c05cc0eee1da4775965609d ""
-  "Classify_earthquakes_report.tex" 1510159862 24906 aabfb2280eeb96fe94b6750e92b31f81 ""
+  "Classify_earthquakes_report.aux" 1510257801 9077 83b32af3f4ab7b0c0ec236b3bbd085cf ""
+  "Classify_earthquakes_report.bbl" 1510257724 1541 e6bd64ea33c57a6b1b323378ad83a797 "bibtex Classify_earthquakes_report"
+  "Classify_earthquakes_report.out" 1510257801 1511 d0e315075dab75716507f42ee90bf96b ""
+  "Classify_earthquakes_report.tex" 1510257799 26954 69c293dd9331a10394d9d5aafa818382 ""
   "figures/predicted_seismogram.png" 1510158913 74638 d931e515378ff8cbbab8b4ea152bddde ""
   "figures/raw_seismograms.png" 1510079425 26801 55074e47db5bdd1ad29c66374b8d4dd7 ""
   "figures/stacked_earthquakes.png" 1510081842 42771 219ea5b5048d70a93aa474b29baa5a0f ""
   "figures/stacked_explosions.png" 1510081804 34950 f504f8bd2a78797471d824650bccbd3e ""
   "figures/svm_code_snippet.png" 1509985307 98906 eff04f142ded09a51bf44ccf41cfd5f4 ""
   (generated)
-  "Classify_earthquakes_report.out"
   "Classify_earthquakes_report.pdf"
-  "Classify_earthquakes_report.log"
   "Classify_earthquakes_report.aux"
+  "Classify_earthquakes_report.out"
+  "Classify_earthquakes_report.log"
