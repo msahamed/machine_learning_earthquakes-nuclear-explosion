@@ -271,25 +271,25 @@
     
         Table~\ref{tab:classification_report} shows the classification report using three evaluation metrics. The overall testing accuracy of the model is about $88\%$.  Accuracy measures the proportion of correctly classified classes out of total test datasets. In addition to accuracy, we also consider precision, recall, and f-1 scores. Precision measures how many datasets are correctly classified as true positive among the true and false positive combined.  Whereas, the recall measures the proportion of the correctly identified true positive instances among the total positive datasets. The F-1 score is the harmonic mean of recall and precision.
 
-        \subsection{Robustness of the Model}
-        I have tested the robustness of the model with an earthquake occurred on May 25, 2009, in Chile-Bolivia border region, the magnitude is 4.1, and a nuclear explosion happened in North Korea on same day May 25 of 2009 with almost same magnitude 4.7. All the new data are processed separately. The purpose of choosing the same day and nearly the same magnitude is to see if the model can perform better in this unknown data sets.
+        % \subsection{Robustness of the Model}
+        % I have tested the robustness of the model with an earthquake occurred on May 25, 2009, in Chile-Bolivia border region, the magnitude is 4.1, and a nuclear explosion happened in North Korea on same day May 25 of 2009 with almost same magnitude 4.7. All the new data are processed separately. The purpose of choosing the same day and nearly the same magnitude is to see if the model can perform better in this unknown data sets.
         
-                \begin{table}[!htb]
-                    \caption{Classification results based on 23460 unknown data} \vspace{0.5em}
-                    \label{tab:robust_classification_report}
-                    \centering
-                    \begin{tabular}{l c c c c}
-                        \hline
-                        Class & Precision & Recall & F-1 score & support\\
-                        \hline
-                        Natural Earthquke & 0.97 & 0.97 & 0.97 & 12962 \\
-                        Nuclear explosion & 0.96 & 0.96 & 0.96 & 10498\\
-                        Average/Total & 0.97 & 0.97 & 0.97 &23460\\[1ex]
-                        \hline
-                    \end{tabular}
-                \end{table}
+        %         \begin{table}[!htb]
+        %             \caption{Classification results based on 23460 unknown data} \vspace{0.5em}
+        %             \label{tab:robust_classification_report}
+        %             \centering
+        %             \begin{tabular}{l c c c c}
+        %                 \hline
+        %                 Class & Precision & Recall & F-1 score & support\\
+        %                 \hline
+        %                 Natural Earthquke & 0.97 & 0.97 & 0.97 & 12962 \\
+        %                 Nuclear explosion & 0.96 & 0.96 & 0.96 & 10498\\
+        %                 Average/Total & 0.97 & 0.97 & 0.97 &23460\\[1ex]
+        %                 \hline
+        %             \end{tabular}
+        %         \end{table}
         
-        Interestingly the model outperforms the testing performance. The new accuracy and ROC-AUC score are 96.85$\%$ and9 96.81$\%$ The table~\ref{tab:robust_classification_report} show the detail evaluation report on the classification. I am amazed to see the robustness of the model which motivates me to publish this result and model as a paper as soon as possible. I believe the model will help both the scientific and political community to track recent North Korea's nuclear activity.
+        % Interestingly the model outperforms the testing performance. The new accuracy and ROC-AUC score are 96.85$\%$ and9 96.81$\%$ The table~\ref{tab:robust_classification_report} show the detail evaluation report on the classification. I am amazed to see the robustness of the model which motivates me to publish this result and model as a paper as soon as possible. I believe the model will help both the scientific and political community to track recent North Korea's nuclear activity.
 
         
         \subsection{Justification}
